@@ -28,7 +28,7 @@ def intersects(game_field, x, y, game_width, game_height, game_block_image): # c
                     intersection = True # if the position does not equal zero then there is an intersection
     return intersection # returns whether there was or was not an intersection
 
-def simulate(game_field, x, y, game_width, game_height, game_block_image): # defines simulate function which tries to find highest value ofy before the game field intersects
+def simulate(game_field, x, y, game_width, game_height, game_block_image): # defines simulate function which tries to find highest value of y before the game field intersects
     while not intersects(game_field, x, y, game_width, game_height, game_block_image): # while the block does not intserect
         y += 1 # incremnet y by one (movie y down by one)
     y -= 1 # subract 1 if it intersects to get the last valid position of the block
@@ -64,7 +64,7 @@ def simulate(game_field, x, y, game_width, game_height, game_block_image): # def
             breaks += 1 # adds 1 to break
             holes = prev_holes # sets holes to the number of previous holes (resets the value)
 
-    return holes, game_height-height-breaks # returns these variables
+    return holes, game_height-height-breaks # returns number of holes and number of potentially completely filled rows
 
 def best_rotation_position(game_field, game_block, game_width, game_height): #method to find the best rotation position
     best_height = game_height # initializes best height to game height
