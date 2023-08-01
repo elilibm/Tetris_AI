@@ -1,1 +1,1 @@
-# Tetris_AI
+# tetris_bot
